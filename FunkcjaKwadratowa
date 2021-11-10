@@ -1,0 +1,39 @@
+using System;
+
+namespace ConsoleApp21
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double delta, x0, x1, x2;
+            Console.WriteLine("Podaj a, b i c dla rownania kwadratowego ax^2 + b + c = 0");
+            Console.WriteLine("Podaj a: ");
+            double a = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj b: ");
+            double b = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj c: ");
+            double c = double.Parse(Console.ReadLine());
+            delta = Math.Pow(b, 2) - 4 * a * c;
+            if (delta < 0)
+            {
+                Console.WriteLine("Delta: {0}", delta);
+                Console.WriteLine("Rownanie nie ma rozwiazania w zbiorze liczb rzeczywistych ");
+            }
+            else if (delta == 0)
+            {
+                x0 = (-b) / (2 * a);
+                Console.WriteLine("Delta: {0}", delta);
+                Console.WriteLine("Rownanie ma jedno rozwiazanie w zbiorze rzeczywistym x0 = {0}", x0);
+            }
+            else if (delta > 0)
+            {
+                x1 = (-b - Math.Sqrt(delta)) / (2 * a);
+                x2 = (-b + Math.Sqrt(delta)) / (2 * a);
+                Console.WriteLine("Rownanie ma dwa rozwiazania w zbiorze liczb rzeczywistych x1 = {0} i x2 = {1}", x1, x2);
+                Console.WriteLine("Delta: {0}", delta);
+            }
+                Console.ReadKey();
+        }
+    }
+}
