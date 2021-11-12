@@ -7,9 +7,14 @@ namespace ConsoleApp21
         static void Main(string[] args)
         {
             double delta, x0, x1, x2;
-            Console.WriteLine("Podaj a, b i c dla rownania kwadratowego ax^2 + b + c = 0");
+            Console.WriteLine("Podaj a, b i c dla rownania kwadratowego ax^2 + 2x + 3c = 0");
             Console.WriteLine("Podaj a: ");
             double a = double.Parse(Console.ReadLine());
+            while (a == 0)
+            {
+                Console.WriteLine("A jest rowne zero, nie mozna dzielic przez zero! Podaj a jeszcze raz!");
+                a = double.Parse(Console.ReadLine());
+            }
             Console.WriteLine("Podaj b: ");
             double b = double.Parse(Console.ReadLine());
             Console.WriteLine("Podaj c: ");
@@ -33,7 +38,7 @@ namespace ConsoleApp21
                 Console.WriteLine("Rownanie ma dwa rozwiazania w zbiorze liczb rzeczywistych x1 = {0} i x2 = {1}", x1, x2);
                 Console.WriteLine("Delta: {0}", delta);
             }
-                Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }
