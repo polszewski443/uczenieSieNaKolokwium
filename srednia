@@ -1,0 +1,27 @@
+using System;
+
+namespace ConsoleApp21
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double srednia;
+            int suma = 0;
+            int liczba = 0;
+            int[] tab = new int[1000000];
+            Console.WriteLine("Ile liczb chcesz dodac?");
+            int ile = int.Parse(Console.ReadLine());
+            for (int i = 1; i <= ile; i++)
+            {
+                Console.WriteLine("Podaj wartosc {0}:", i);
+                tab[i-1] = int.Parse(Console.ReadLine());
+                liczba++;
+                suma += tab[i - 1];
+            }
+            srednia = (double)suma / liczba;
+            Console.WriteLine("Suma wynosi: {0}, Srednia wynosi: {1}", suma, srednia);
+            
+        }
+    }
+}
