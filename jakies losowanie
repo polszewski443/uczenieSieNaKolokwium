@@ -1,0 +1,24 @@
+using System;
+
+namespace ConsoleApp21
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            System.Random random = new System.Random();
+            Console.WriteLine("Five random integers between 50 and 100:");
+            int[] tab = new int[5];
+            for (int ctr = 0; ctr <= 4; ctr++)
+                tab[ctr] = random.Next(10, 50);
+            Console.WriteLine();
+            Print(tab);
+            Console.ReadKey();
+        }
+        static void Print(int[] tab)
+        {
+            for (int i = 0; i < tab.Length; i++)
+            Console.Write(" {0} ", tab[i]);
+        }
+    }
+}
